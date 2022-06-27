@@ -10,3 +10,5 @@ while (lf < rf) {
 }
 
 console.log("Result: ", ans);
+
+export {}
