@@ -1,4 +1,4 @@
-let prices = [10, 3, 15, 1, 5, 3];
+let prices = [7,1,5,3,6,4];
 
 let l = 0,
   r = 1,
@@ -7,8 +7,8 @@ let l = 0,
   profit = 0;
 
 while(r< prices.length){
-    if(prices[l] < prices[r] && prices[r] - prices[l] > profit){
-        profit = prices[r] - prices[l]
+    if(prices[l] < prices[r]){
+        profit = Math.max(prices[r] - prices[l], profit)
         buy = l
         sell = r
     }
