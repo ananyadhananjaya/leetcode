@@ -1,19 +1,22 @@
-let prices = [7, 9, 1, 2, 3, 5, 6, 1, 10, 1];
+let prices = [10, 15, 1, 5, 3];
 
 let profit = 0,
   buy = 0,
-  sell = 0;
+  sell = 1,
+  buyDay = 0,
+  sellDay = 0;
 
-for (let i = 1; i < prices.length; i++) {
-  if (prices[i] < prices[buy]) {
-    buy = i;
+while (sell < prices.length) {
+  if (prices[buy] < prices[sell] && prices[sell] - prices[buy] > profit) {
+    profit = prices[sell] - prices[buy];
+    buyDay = buy
+    sellDay = sell
+  } else {
+    buy = sell;
   }
-  if (prices[i] - prices[buy] > profit) {
-    sell = i;
-    profit = prices[i] - prices[buy];
-  }
+  sell += 1;
 }
 
-console.log("You will buy on", buy, "sell on", sell, "to get", profit);
+console.log("You will buy on", buyDay, "sell on", sellDay, "to get", profit);
 
-//Get buy date, sell date with profit 
+//Get buy date, sell date with profit
