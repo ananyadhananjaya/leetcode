@@ -1,10 +1,10 @@
-let nums = [7, 8, 9, 10, 1, 2, 3, 4, 5];
-let target = 9;
+let nums = [4, 5, 6, 7, 0, 1, 2];
+let target = 0;
 
 let left = 0,
   right = nums.length - 1;
 
-while (left < right) {
+while (left <= right) {
   let mid = Math.floor((left + right) / 2);
   if (nums[mid] == target) {
     console.log("found");
